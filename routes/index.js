@@ -45,7 +45,7 @@ function executeLambda(req, res, next){
   		if (err) console.log(err);
   		else console.log('Saved!');
 
-  		child_process.exec('lambda-local -l resources/index.js -h handler -v 1 -e event.json -E \'{"kinesisStreamName":"ecp-session-track-dev","alsoWriteEventsToCloudwatch":"true"}\'', function(error, stdout, stderr){
+  		child_process.exec('lambda-local -l resources/index.js -h handler -v 1 -e event.json -E \'{"kinesisStreamName":"name","alsoWriteEventsToCloudwatch":"true"}\'', function(error, stdout, stderr){
 			console.log("error",error);
 			console.log("stdout",stdout);
 			console.log("stderr",stderr);
